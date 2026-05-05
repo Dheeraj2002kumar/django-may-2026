@@ -77,7 +77,8 @@ create a template for the blog home page
 ```
 
 run the development server
-bash```
+
+```bash
 python manage.py runserver
 ```
 
