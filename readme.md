@@ -1,12 +1,12 @@
 # Django
 
 create a Django project 
-bash```
+```bash
 django-admin startproject myproject
 ```
 
 create a Django app
-bash```
+```bash
 cd myproject
 python manage.py startapp blog
 ```
