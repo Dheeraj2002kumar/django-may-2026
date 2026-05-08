@@ -6,10 +6,45 @@
     <title>Template</title>
 </head>
 <body>
-    {% for x in fruits %}
-        <h1>{{ x }}</h1>
-    {% endfor %}
+
+    {% with firstname="Dheeraj" %}
+        <h1>Hello {{ firstname }}, how are you?</h1>
+    {% endwith %}
+
+    <ul>
+        {% for x in mymembers %}
+            <li>{{ x.firstname }}</li>
+        {% endfor %}
+    </ul>
+
+    {% with greeting=1 day="Friday" %}
+
+        {% if greeting == 1 %}
+            <h1>Hello</h1>
+        {% elif greeting == 2 %}
+            <h1>Welcome</h1>
+        {% else %}
+            <h1>Goodbye</h1>
+        {% endif %}
+
+        {% if greeting == 1 and day == "Friday" %}
+            <h1>Hello Weekend!</h1>
+        {% endif %}
+
+        {% if 'Banana' not in fruits %}
+            <h1>Hello</h1>
+        {% else %}
+            <h1>Goodbye</h1>
+        {% endif %}
+
+        {% if x is y %}
+            <h1>YES</h1>
+        {% else %}
+            <h1>NO</h1>
+        {% endif %}
+    {% endwith %}
 
     <p>In views.py you can see what the fruits variable looks like.</p>
+
 </body>
 </html>
