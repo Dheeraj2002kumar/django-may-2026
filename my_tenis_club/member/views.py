@@ -30,10 +30,14 @@ def main(request):
     return HttpResponse(template.render())
 
 def testing(request):
-    mymembers = Member.objects.all().values()
+    # mydata = Member.objects.all().values()
+    # mydata = Member.objects.values_list('firstname')
+    mydata = Member.objects.filter(firstname='Dheeraj').values()
+    # mymembers = Member.objects.all().values()
     template = loader.get_template('template.html')
     context = {
-        'mymembers': mymembers,
+        'mymembers': mydata,
+        # 'mymembers': mymembers,
         'x': ['Apple', 'Banana', 'Cherry'],
         'y': ['Apply', 'Banana', 'Cherry'],
     }
